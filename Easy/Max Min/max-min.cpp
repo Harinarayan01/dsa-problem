@@ -12,19 +12,21 @@ class Solution
    public:
     int findSum(int A[], int N)
     {
-    	int ans;
     	int mini=A[0];
-    	int maxi=A[0];
     	for(int i=1;i<N;i++){
     	    if(mini>A[i]){
     	        mini=A[i];
     	    }
-    	    if(maxi<A[i]){
-    	        maxi=A[i];
+    	}
+    	int maxii=A[0];
+    	for(int i=1;i<N;i++){
+    	    if(maxii<A[i]){
+    	        maxii=A[i];
     	    }
     	}
-    	ans=mini+maxi;
-    return ans;	
+    // int ans=maxii;
+    return maxii+mini;
+    	
     }
 
 };
