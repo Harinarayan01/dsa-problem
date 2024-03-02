@@ -6,19 +6,19 @@ using namespace std;
 // } Driver Code Ends
 class Solution{
     public:
-    int firstElementKTime(int a[], int n, int k)
-    {
-        int ans=-1;
+    int firstElementKTime(int n, int k, int a[])
+    {   int ans=-1;
         unordered_map<int,int>mp;
         for(int i=0;i<n;i++){
             mp[a[i]]++;
-            if(mp[a[i]]==k){
-                return a[i];
+            if(mp[a[i]]>=k){
+                ans=a[i];
+                return ans;
             }
         }
-        return ans;
         
         
+    return ans;    
     }
 };
 
@@ -35,7 +35,7 @@ int main() {
 	        cin >> a[i];
 	    }
 	    Solution ob;
-	    cout<<ob.firstElementKTime(a, n, k)<<endl;
+	    cout<<ob.firstElementKTime(n, k, a)<<endl;
 	}
 	
 	return 0;
